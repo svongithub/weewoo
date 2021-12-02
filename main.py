@@ -10,7 +10,8 @@ reddit = praw.Reddit(
 )
 subreddit = reddit.subreddit('rareinsults')
 while True:
-    for post in subreddit.stream.submissions:
+    for post in subreddit.stream.submissions():
         replies = ["Oof that really was a violation","How do they come up with this LMAO","Ouch apply water to the burn man sheesh","Excuse me i am here to report a murder","Bit too far theyve been actually murdered"]
         reply = random.choice(replies)
         post.reply(reply)
+
